@@ -11,10 +11,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
+@Table(name = "editorial")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Editorial {
 
     @Id
@@ -42,8 +48,6 @@ public class Editorial {
     @Column(name = "fecha_fundacion")
     private LocalDate fechaFundacion;
 
-    public Editorial() {
-    }
 
     // Relaciones
     @OneToMany(mappedBy = "editorial")
